@@ -125,7 +125,22 @@ h6 {
     color: #1A1917;
 }
 
-
+div.scrollup {
+    position: fixed; /* фиксированная позиция */
+    color: #fff; /* цвет текста */
+    background-color: #286090; /* цвет заднего фона */
+    right: 30px; /* расстояние от правого края */
+    bottom: 30px; /* расстояние от нижнего края */
+    padding: 8px 10px; /* отступы до содержимого блока */
+    font-size: 20px; /* размер шрифта (иконки) */
+    border-radius:50%;
+    cursor: pointer; /* форма курсора */
+    display: none; /* не отображать элемент */
+    text-align: center; /*выравнивание содержимого элемента по центру */
+  }
+  div.scrollup:hover {
+    background-color: #000; /* цвет заднего фона при наведении */
+  }
 /*header*/
 
 .header {

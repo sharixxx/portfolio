@@ -125,3 +125,38 @@ var swiper = new Swiper('.swiper-container', {
 
 
 
+
+const offset= 200;
+  const scrollUp =document.querySelector('.scrollup');
+  const srcollUpSvgPath =document.querySelector('.scrollup_svg_path');
+  const pathLength =srcollUpSvgPath.getTotalLength();
+  
+
+  srcollUpSvgPath.style.strokeDasharray = `${pathLength} ${pathLength}`;
+  srcollUpSvgPath.style.transition = 'stroke-dashoffset 20ms';
+  const getTop = () => window.pageYOffset || document.documentElement.scrollTop;
+  //updateDashoffset
+   
+  const updateDashoffset = () => {
+      const height = document.documentElement.scrollHeight - window.innerHeight;
+      const dashoffset = pathLength - (getTop() * pathLength / height);
+      srcollUpSvgPath.style.strokeDashoffset = dashoffset;
+
+    };
+  //onscroll
+
+  updateDashoffset();
+  window.addEventListener('scroll', () => {
+    if(getTop()>offset){
+      scrollUp.classList.add('scrollup--active');
+    }
+    else{
+      scrollUp.classList.remove('scrollup--active');
+    }
+});
+  //click
+  scrollUp.addEventListener('click',() => {
+    $("html, body").animate({
+      scrollTop:0
+    },600);
+    });

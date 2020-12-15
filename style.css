@@ -201,10 +201,18 @@ h6 {
 }
 .fixed {
     position: fixed;
-    background-color:rgba(0,0,0,0.5);
+    transform: translate3d(0,0,0);
+    box-shadow:0 5px 10px rgba(255,255,255,.2);
+    background-color:rgba(0,0,0,0.6);
     top: 0;
     transition: .2s ease-in-out;
   }
+
+.active{
+box-shadow:0 3px 8px rgba(0,0,0,0.3);
+color:#fff;
+opacity: 1;
+}
 .header__inner {
     display: flex;
     justify-content: space-between;
@@ -236,7 +244,7 @@ h6 {
     width: 28px;
     height: 3px;
     background-color: #fff;
-    font-size: 0;
+    font-size: 0;    
     color:transparent;
     position: relative;
     border-radius: 4px;
@@ -261,7 +269,7 @@ h6 {
 }
 
 .burger_item:after {
-    width: 20px;
+    width: 28px;
     bottom: -8px;
     border-radius: 4px;
 }
@@ -955,12 +963,30 @@ hr{
     /* nav */
     .nav{
         display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        color:white;
+        background:#000;
+        opacity: 0.6;
+        width: 100%;
     }
+    .nav_links{
+        display: flex;
+        flex-direction: column;
+        text-align-last: center;
+        margin: 0;
+        padding: 15px 25px;
+        font-size: 14px;
+        
+    }
+    .nav.active{
+        display: block;
+        transition: .3s linear;
+    }
+    
     .sel{
         margin-right: 15px;
-    }
-    .sel_links{
-        
     }
     /* burger */
     .ddd{
@@ -971,8 +997,27 @@ hr{
         display:block;
         padding-left: 10px;
     }
-    /* btn */
-    
+    .burger_item{
+        transition: background .2s linear;
+    }
+    .burger_menu.active .burger_item{
+        background:none;
+    }
+    .burger_menu.active .burger_item::before{
+        transform-origin: left top;
+        transform: rotate(45deg) translateX(-2px);
+        transition: transform .2s linear;
+
+    }
+    .burger_menu.active .burger_item::after{
+        transform-origin: left bottom;
+        transform: rotate(-45deg)translateX(-3px);
+        transition: transform .2s linear;
+
+    }
+    .burger_menu:focus{
+        outline: 0;
+    }
     /* about */
     .about{
         height: 100%;
@@ -1213,6 +1258,7 @@ hr{
     .document_links:not(:first-child){
         margin-left: 0px;
     }
+
 }
 
 

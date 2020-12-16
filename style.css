@@ -291,7 +291,7 @@ opacity: 1;
     text-decoration: none;
     display: inline-block;
     vertical-align: top;
-    margin-left: 45px;
+    margin-left: 35px;
     transition: color .1s linear;
     position: relative;
 }
@@ -956,6 +956,7 @@ hr{
     /* header */
     .header{
         min-width: 100%;
+
     }
     .header_icon{
         display: none;
@@ -972,8 +973,7 @@ hr{
         width: 100%;
     }
     .nav_links{
-        display: flex;
-        flex-direction: column;
+        display: block;
         text-align-last: center;
         margin: 0;
         padding: 15px 25px;
@@ -984,7 +984,14 @@ hr{
         display: block;
         transition: .3s linear;
     }
-    
+    .nav2{
+        display: flex;
+        flex-direction: column;
+        text-transform: uppercase;
+        text-align: center;
+    }
+    .nav_link2{
+    }
     .sel{
         margin-right: 15px;
     }
@@ -1218,13 +1225,12 @@ hr{
     }
     .nav2{
         display: flex;
-        flex-wrap: wrap;
     }
     .footer_logo{
         margin-bottom: 20px;   
     }
     .nav_link2{
-        margin-bottom: 30px;
+        margin-bottom: 20px;
     }
     .footer__inner{
         flex-direction: column;
@@ -1550,13 +1556,15 @@ hr{
     }
     .nav2{
         display: flex;
-        flex-wrap: wrap;
+        flex-direction: column;
+        text-transform: uppercase;
+        text-align: center;
     }
     .footer_logo{
         margin-bottom: 20px;   
     }
     .nav_link2{
-        margin-bottom: 30px;
+        margin-bottom: 20px;
     }
     .footer__inner{
         flex-direction: column;
@@ -1877,17 +1885,19 @@ hr{
     }
     /* footer */
     .footer{
-        padding: 50px 0px;
+        padding: 40px 0px;
     }
     .nav2{
         display: flex;
-        flex-wrap: wrap;
+        flex-direction: column;
+        text-transform: uppercase;
+        text-align: center;
     }
     .footer_logo{
         margin-bottom: 20px;   
     }
     .nav_link2{
-        margin-bottom: 30px;
+        margin-bottom: 20px;
     }
     .footer__inner{
         flex-direction: column;
@@ -1913,8 +1923,9 @@ hr{
         margin-bottom: 20px;
     }
     .document_links{
-        font-size: 14px;
-        line-height: 34px;
+        margin-bottom: 10px;
+        font-size: 16px;
+        line-height: 18px;
     }
     .document_links:not(:first-child){
         margin-left: 0px;
